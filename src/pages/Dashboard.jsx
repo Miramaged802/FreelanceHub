@@ -405,7 +405,7 @@ function Dashboard() {
             {isFreelancer ? (
               <>
                 <Link
-                  to="/find-jobs"
+                  to="/jobs"
                   className="flex items-center justify-center w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition duration-200"
                 >
                   <FaSearch className="mr-2" /> Find Jobs
@@ -432,13 +432,13 @@ function Dashboard() {
                   <FaPlus className="mr-2" /> Post a New Job
                 </Link>
                 <Link
-                  to="/proposals"
+                  to="/review-proposals"
                   className="flex items-center justify-center w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition duration-200"
                 >
                   <FaUserCheck className="mr-2" /> Review Proposals
                 </Link>
                 <Link
-                  to="/contracts"
+                  to="/manage-contracts"
                   className="flex items-center justify-center w-full bg-primary-600 hover:bg-primary-700 text-white px-4 py-2 rounded-lg transition duration-200"
                 >
                   <FaFileContract className="mr-2" /> Manage Contracts

@@ -12,7 +12,6 @@ import Dashboard from "./pages/Dashboard";
 import Jobs from "./pages/Jobs";
 import Profile from "./pages/Profile";
 import Messages from "./pages/Messages";
-import Settings from "./pages/Settings";
 import Login from "./pages/auth/Login";
 import Register from "./pages/auth/Register";
 import ForgotPassword from "./pages/auth/ForgotPassword";
@@ -24,9 +23,13 @@ import HowToHire from "./pages/HowToHire";
 import PostJob from "./pages/PostJob";
 import ReviewProposals from "./pages/ReviewProposals";
 import ManageContracts from "./pages/ManageContracts";
+import Earnings from "./pages/Earnings";
+import MyProposals from "./pages/MyProposals";
+import Settings from "./pages/Settings";
+
 function App() {
   const location = useLocation();
-  const authPaths = ['/login', '/register', '/forgot-password'];
+  const authPaths = ["/login", "/register", "/forgot-password"];
   const hideLayout = authPaths.includes(location.pathname);
 
   return (
@@ -47,14 +50,7 @@ function App() {
           <Route path="/proposal" element={<Proposal />} />
           <Route path="/how-to-find-work" element={<HowToFindWork />} />
           <Route path="/how-to-hire" element={<HowToHire />} />
-          <Route
-            path="/dashboard"
-            element={
-              <PrivateRoute>
-                <Dashboard />
-              </PrivateRoute>
-            }
-          />
+          
           <Route
             path="/jobs"
             element={
@@ -80,6 +76,14 @@ function App() {
             }
           />
           <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
             path="/messages"
             element={
               <PrivateRoute>
@@ -88,10 +92,18 @@ function App() {
             }
           />
           <Route
-            path="/settings"
+            path="/earnings"
             element={
               <PrivateRoute>
-                <Settings />
+                <Earnings />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/my-proposals"
+            element={
+              <PrivateRoute>
+                <MyProposals />
               </PrivateRoute>
             }
           />
@@ -108,6 +120,14 @@ function App() {
             element={
               <PrivateRoute>
                 <ManageContracts />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <PrivateRoute>
+                <Settings />
               </PrivateRoute>
             }
           />
